@@ -10,7 +10,7 @@ We will use the following templates to deploy code to Azure:
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-This is a starter template for deploying a linux web app with deployment slots for TEST and STAGING that can be used for multi-stage deployment pipelines
+This is a starter template for deploying a windows web app with deployment slots for TEST and STAGING that can be used for multi-stage deployment pipelines
 
  ## Linux Web App with Slots
 
