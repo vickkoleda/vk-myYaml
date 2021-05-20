@@ -12,7 +12,6 @@ trigger:
     include:
       - myNewDadApp/
     
-
 pool:
   vmImage: 'windows-latest'
 
