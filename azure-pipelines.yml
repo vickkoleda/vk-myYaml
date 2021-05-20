@@ -59,6 +59,8 @@ stages:
 - stage: TestDeployment
   jobs:
   - job: PublishTheCode
+    variables:
+    - group: myYAML-Demos
     steps:
     - task: DownloadBuildArtifacts@0
       inputs:
@@ -70,8 +72,8 @@ stages:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'viktar_kaliada@epam.com(65616e90-0a9a-44e1-aee8-698d57db2454)'
-        subscriptionId: '65616e90-0a9a-44e1-aee8-698d57db2454'
+        azureResourceManagerConnection: '$(AzSPN)'
+        subscriptionId: '$(AzSubID)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: 'ado-yaml-learn-2'
         location: 'North Europe'
@@ -84,7 +86,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'viktar_kaliada@epam.com(65616e90-0a9a-44e1-aee8-698d57db2454)'
+        azureSubscription: '$(AzSPN)'
         appType: 'webApp'
         WebAppName: 'appsvc-yaml-02-vk'
         packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
