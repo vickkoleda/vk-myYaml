@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mynewdadapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mynewdadapp
+  template:
+    metadata:
+      labels:
+        app: mynewdadapp 
+    spec:
+      containers:
+        - name: mynewdadapp 
+          image: myyaml04vkacr.azurecr.io/mynewdadapp
+          ports:
+          - containerPort: 80
