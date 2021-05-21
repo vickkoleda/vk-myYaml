@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '9c3e0bd9-95e1-4165-9f25-0a9c68cc78b3'
   imageRepository: 'mynewdadapp'
   containerRegistry: 'myyaml04vkacr.azurecr.io'
-  dockerfilePath: '**/myNewDadApp/Dockerfile'
+  dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'myyaml04vkacrf3e0-auth'
 
